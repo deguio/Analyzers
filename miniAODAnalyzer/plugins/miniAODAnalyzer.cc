@@ -22,7 +22,9 @@
 #include "FWCore/Common/interface/TriggerNames.h"
 #include "DataFormats/PatCandidates/interface/PackedTriggerPrescales.h"
 
-
+#include <numeric>
+#include "FWCore/Framework/interface/LuminosityBlock.h"
+#include "FWCore/Framework/interface/Event.h"
 
 #include <map>
 #include <string>
