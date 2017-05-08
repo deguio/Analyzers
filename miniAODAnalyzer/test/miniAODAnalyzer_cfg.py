@@ -4,9 +4,10 @@ process = cms.Process("ANALYSIS")
 
 process.source = cms.Source("PoolSource",
                     fileNames = cms.untracked.vstring(
-                                  '/store/data/Run2016G/ZeroBias/MINIAOD/PromptReco-v1/000/280/385/00000/08080C9F-C078-E611-AEF1-FA163E5647FC.root',
-                                  '/store/data/Run2016G/ZeroBias/MINIAOD/PromptReco-v1/000/280/385/00000/084B4FBE-C078-E611-9740-02163E013993.root',
-                                  '/store/data/Run2016G/ZeroBias/MINIAOD/PromptReco-v1/000/280/385/00000/0A6B1BD0-C078-E611-A332-02163E014113.root'
+                                    '/store/data/Run2016H/DoubleEG/AOD/PromptReco-v1/000/281/130/00000/70B9D8E1-7680-E611-ABA1-02163E014716.root',
+                                   # '/store/data/Run2016G/ZeroBias/MINIAOD/PromptReco-v1/000/280/385/00000/08080C9F-C078-E611-AEF1-FA163E5647FC.root',
+                                   # '/store/data/Run2016G/ZeroBias/MINIAOD/PromptReco-v1/000/280/385/00000/084B4FBE-C078-E611-9740-02163E013993.root',
+                                   # '/store/data/Run2016G/ZeroBias/MINIAOD/PromptReco-v1/000/280/385/00000/0A6B1BD0-C078-E611-A332-02163E014113.root'
                         ),
                     secondaryFileNames = cms.untracked.vstring(),
 #                   lumisToProcess = cms.untracked.VLuminosityBlockRange('258158:1-258158:1786'),
@@ -34,7 +35,7 @@ process.MyAnalysis =cms.EDAnalyzer("MyMiniAODAnalyzer",
                        metTag                  = cms.untracked.InputTag("slimmedMETs"),
                        vtx                     = cms.untracked.InputTag("offlineSlimmedPrimaryVertices"),
                        bits                    = cms.untracked.InputTag("TriggerResults","","HLT"),
-                       prescales               = cms.untracked.InputTag("patTrigger"),
+                       prescales               = cms.untracked.InputTag("patTrigger"), #this is giving us a crash...
                                    
                        maxJetEta               = cms.untracked.double(5.0),   #is this ok?
                        minJetPt                = cms.untracked.double(10.0),  #is this ok?
